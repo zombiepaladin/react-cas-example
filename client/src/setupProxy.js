@@ -2,7 +2,9 @@
 // to any request accepting html, we must instead set up our own proxy 
 // server.  All routes starting with `/api` will be forwarded to our API 
 // server.
-const { createProxyMiddleware } = require('http-proxy-middleware');module.exports = function(app) {
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
